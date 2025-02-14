@@ -1,24 +1,18 @@
-name: Workflow Dispatch Free Form   Example
+name: Workflow Dispatch Free Form Example
 
 on:
   workflow_dispatch:
     inputs:
-      enviroment:
-        description: This a description for the created environments
+      environment:
+        description: This is a description for the created environments
         required: true
-        options:
-          - QA
-          - Dev
 
       test-suite:
         description: Select the Required Test Suite to run
         default: Smoke
 
-
-
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "We did the Thing!t to ${{github.events.inputs.enviroment}} Env and The Test ${{github.events.test_suite}}"
+      - run: echo "We did the Thing to ${{ github.event.inputs.environment }} Env and The Test ${{ github.event.inputs.test-suite }}"

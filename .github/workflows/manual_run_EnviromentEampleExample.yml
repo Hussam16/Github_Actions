@@ -27,3 +27,9 @@ jobs:
     steps:
       - run: echo "We did the Thing to ${{ github.event.inputs.environment }} Env and The Test ${{ github.event.inputs.test-suite }}"
 
+  Notify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " Add The ${{ github.event.inputs.Tags }}"
+

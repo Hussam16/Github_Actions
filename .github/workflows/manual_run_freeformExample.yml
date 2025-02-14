@@ -18,7 +18,7 @@ on:
         default: Smoke
 
       Tags:
-        description: This is a description for the created environments
+        description: This a True or false Tag
         type: boolean
         required: true
 

@@ -9,10 +9,23 @@ on:
 
       test-suite:
         description: Select the Required Test Suite to run
+        type: choice
+        options:
+          - Sanity
+          - Regression
+          - E2E
+
         default: Smoke
+
+      Tags:
+        description: This is a description for the created environments
+        type: boolean
+        required: true
+
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - run: echo "We did the Thing to ${{ github.event.inputs.environment }} Env and The Test ${{ github.event.inputs.test-suite }}"
+
